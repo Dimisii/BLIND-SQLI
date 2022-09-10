@@ -52,11 +52,12 @@ if __name__ == "__main__":
     final_str = ""
     for i in range(1, 75):
         char = reqursion_find(32, 126, i, namespace)
-        final_str += chr(int(char))
         if char == -1:
             print("work finish")
             print(final_str)
             break
+        else:
+            final_str += chr(int(char))
         print(chr(int(char)))
 
 

@@ -21,19 +21,20 @@ def blind_query(char_index, mid, znak, namespace, headers):
     query = namespace.query.replace("[INDEX]", str(char_index)).replace("[MID]", str(mid)).replace("[ZNAK]", znak)
 
     if namespace.data == None:
-        parameter = str(namespace.url[0]).find("FUZZ")
+        parameter = str(namespace.url).find("FUZZ")
         if parameter != -1:
             resp = requests.get(url=str(namespace.url).replace("FUZZ", query), headers=headers)
         else:
-            raise 
+            raise
     else:
         resp = requests.post(url=namespace.url, data={namespace.data: query}, headers=headers)
-        requtime = resp.elapsed
-        resp.close()
-        if requtime > answer_delay:
-            return True
-        else:
-            return False
+
+    requtime = resp.elapsed
+    resp.close()
+    if requtime > answer_delay:
+        return True
+    else:
+        return False
 
 
 def reqursion_find(start, end, char_index, namespace, headers):

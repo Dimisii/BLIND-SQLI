@@ -112,7 +112,7 @@ if __name__ == "__main__":
     else:
         headers = strToDict(headers[0])
 
-    post_data = strToDict(str(namespace.data[0]))
+    post_data = strToDict(str(namespace.data))
 
     fuzz_key = ""
     for key in post_data:

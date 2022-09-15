@@ -110,7 +110,7 @@ if __name__ == "__main__":
                    "Accept-Encoding": "gzip, deflate",
                    "Accept-Language": "ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3"}
     else:
-        headers = strToDict(headers[0])
+        headers = strToDict(headers)
 
     post_data = strToDict(str(namespace.data))
 
@@ -118,6 +118,8 @@ if __name__ == "__main__":
     for key in post_data:
         if post_data[key] == "FUZZ":
             fuzz_key = key
+
+    print("Headers -> " + str(headers))
 
     final_str = ""
     for i in range(1, 75):

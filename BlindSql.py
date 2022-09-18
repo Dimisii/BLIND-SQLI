@@ -138,7 +138,8 @@ if __name__ == "__main__":
     for i in range(1, 200):
         char = reqursion_find(32, 126, i)
         if char == -1:
-            print("work finish")
+            print("Скрипт отработал. Если ничего не вернул, то где0то ошибка."
+                  "Проверь параметры, url.")
             print(final_str)
             break
         else:
